@@ -1,0 +1,309 @@
+/* ── Fonts & Base ──────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+}
+
+.mono-text, .mono-input, .class-code-display {
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+/* ── Backgrounds ──────────────────────────────────────────── */
+.hero-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+  color: #e8e8f0;
+}
+
+.classroom-bg {
+  min-height: 100vh;
+  background: #f0f4f8;
+}
+
+.teacher-bg {
+  min-height: 100vh;
+  background: #f5f0ff;
+}
+
+/* ── Home Page ──────────────────────────────────────────────── */
+.brand-badge {
+  font-size: 3.5rem;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.brand-title {
+  font-family: 'Space Mono', monospace;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+
+.brand-sub {
+  color: #a0aec0;
+  font-weight: 300;
+}
+
+.home-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  color: #e8e8f0;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.home-card .text-muted { color: #8892a4 !important; }
+.home-card .form-label { color: #c8d0e0; }
+
+.home-card .form-control {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.home-card .form-control:focus {
+  background: rgba(255,255,255,0.12);
+  border-color: #7c3aed;
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.25);
+}
+
+.home-card .form-control::placeholder { color: #666d80; }
+
+.card-icon { font-size: 2.2rem; }
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.btn-student {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn-student:hover {
+  color: white;
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-teacher {
+  background: linear-gradient(135deg, #059669, #10b981);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn-teacher:hover {
+  color: white;
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-ask {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.65rem 1.2rem;
+}
+
+.btn-ask:hover { color: white; opacity: 0.9; }
+
+/* ── Badges & Nav ──────────────────────────────────────────── */
+.classroom-nav, .teacher-nav {
+  background: #1e1e2e;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.class-badge {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem;
+}
+
+.teacher-badge {
+  background: linear-gradient(135deg, #059669, #10b981);
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem;
+}
+
+/* ── Ask Card ──────────────────────────────────────────────── */
+.ask-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(99,102,241,0.1);
+  border-top: 4px solid #6366f1;
+}
+
+.question-input {
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  resize: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.2s;
+}
+
+.question-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+/* ── Question Cards ──────────────────────────────────────────── */
+.question-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.15s, box-shadow 0.15s;
+  border-left: 4px solid #6366f1;
+}
+
+.question-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.question-card.answered {
+  border-left-color: #10b981;
+  opacity: 0.7;
+}
+
+.teacher-question-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  transition: box-shadow 0.15s;
+  border-left: 4px solid #7c3aed;
+}
+
+.teacher-question-card:hover {
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+
+.teacher-question-card.answered {
+  border-left-color: #10b981;
+  opacity: 0.65;
+}
+
+.question-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1a202c;
+  margin-bottom: 0;
+}
+
+/* ── Upvote ──────────────────────────────────────────────── */
+.upvote-col {
+  min-width: 44px;
+}
+
+.btn-upvote {
+  background: none;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  color: #6366f1;
+  padding: 0.3rem 0.6rem;
+  transition: all 0.15s;
+  line-height: 1.2;
+}
+
+.btn-upvote:hover {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: white;
+  transform: scale(1.05);
+}
+
+.upvote-arrow { font-size: 0.8rem; display: block; }
+.upvote-count { font-size: 0.85rem; font-weight: 700; font-family: 'Space Mono', monospace; }
+
+.upvote-placeholder { color: #cbd5e0; padding: 0.3rem 0.2rem; }
+
+.upvote-display {
+  color: #7c3aed;
+  font-family: 'Space Mono', monospace;
+}
+
+.upvote-arrow-static { font-size: 0.75rem; display: block; }
+
+/* ── Answered Badge ──────────────────────────────────────────── */
+.answered-badge {
+  background: #d1fae5;
+  color: #065f46;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  padding: 0.25em 0.6em;
+}
+
+/* ── Teacher Stats ──────────────────────────────────────────── */
+.stat-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+.stat-number {
+  font-family: 'Space Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Share Banner ──────────────────────────────────────────── */
+.share-banner {
+  background: linear-gradient(135deg, #1e1e2e, #2d2b55);
+  color: white;
+  border-radius: 14px;
+}
+
+.class-code-display {
+  color: #a78bfa;
+  font-size: 1.5rem !important;
+}
+
+/* ── Empty State ──────────────────────────────────────────── */
+.empty-state {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem !important;
+}
+
+.empty-icon, .error-icon { font-size: 4rem; display: block; }
+
+/* ── Char Count ──────────────────────────────────────────── */
+.char-count {
+  color: #a0aec0;
+  font-size: 0.78rem;
+  transition: color 0.2s;
+}
